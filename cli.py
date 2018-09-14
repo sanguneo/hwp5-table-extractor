@@ -1,4 +1,5 @@
 from hwp5_table import HwpFile
+import time
 import json
 import csv
 import os
@@ -67,3 +68,10 @@ def tocsv (dirname):
 if __name__ == '__main__':
     result = tocsv(BASE_DIR)
     print('처리한 파일 수 : {} \n처리된 데이터 수 : {}'.format(result[1], result[0]))
+    list = []
+    gethering(BASE_DIR,list)
+    list2 = []
+    for file in list:
+        list2.append(os.path.getmtime(file))
+    print(list2)
+
